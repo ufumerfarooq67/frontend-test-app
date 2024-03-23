@@ -1,12 +1,12 @@
 import { BASE_AP_URL } from "../constants";
-import { IRequestProp } from "../interfaces";
+import { IPagination, IRequestProp } from "../interfaces";
 
-export async function onCallAPI(url: string = "", options: IRequestProp) {
+export async function onCallAPI(url: string = "", pagination: IPagination) {
   try {
     const response = await fetch(
       BASE_AP_URL +
         "" +
-        `/?page=${options.pagination.page}&results=${options.pagination.results}`
+        `/?page=${pagination.page}&results=${pagination.results}`
     );
     const data = await response.json();
     return data;

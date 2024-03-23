@@ -29,7 +29,10 @@ export default function GoogleMasps(props: IGoogleMapsProps) {
         mapContainerStyle={{
           height: "500px",
         }}
-        center={{ lat: Number(coordinates.lat), lng: Number(coordinates.lng) }}
+        center={{
+          lat: Number(coordinates?.lat),
+          lng: Number(coordinates?.lng),
+        }}
         onLoad={onGoogleMapsLoad}
       />
     </div>

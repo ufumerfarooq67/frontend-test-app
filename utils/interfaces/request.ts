@@ -1,4 +1,5 @@
 export interface IRequestProp {
+  url: string;
   pagination: IPagination;
 }
 

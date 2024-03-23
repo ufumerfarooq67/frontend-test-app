@@ -56,10 +56,15 @@ export default function UserList() {
 
   // Hooks
   const { isLoading, error, data }: IFetchHookUserData = useAPICall({
-    pagination: { ...pagination },
+    url: "",
+    pagination,
   });
 
   // Handlers
+  const onInit = () => {
+    const store = localStorage.getItem("filter");
+    setFilter(store ?? "");
+  };
   const onUserMapper = (items: IUserPayloadRaw[]) => {
     const mapped_data = onUsersMap(items);
     setUsers(mapped_data);
@@ -82,11 +87,6 @@ export default function UserList() {
     );
     setFilteredUsers(filteredUsers);
   }, 300);
-
-  const onInit = () => {
-    const store = localStorage.getItem("filter");
-    setFilter(store ?? "");
-  };
 
   // Effects
   useEffect(() => {

@@ -2,6 +2,8 @@ import { IUserPayload, IUserPayloadRaw } from "../interfaces";
 import { toTitleCase } from "./string";
 
 export function onUsersMap(items: IUserPayloadRaw[]): IUserPayload[] {
+  console.log({ items });
+
   return items.map((item, index, arr): IUserPayload => {
     return {
       id: item.id.value,
@@ -13,8 +15,8 @@ export function onUsersMap(items: IUserPayloadRaw[]): IUserPayload[] {
       username: item.login.username,
       gender: toTitleCase(item.gender),
       coordinates: {
-        lat: item.coordinates.latitude,
-        lng: item.coordinates.longitude,
+        lat: item?.coordinates?.latitude ?? "0",
+        lng: item?.coordinates?.longitude ?? "0",
       },
     };
   });

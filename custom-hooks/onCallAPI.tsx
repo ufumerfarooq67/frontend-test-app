@@ -2,8 +2,10 @@ import { onCallAPI } from "@/utils/functions";
 import { IRequestProp } from "@/utils/interfaces";
 import { useEffect, useState } from "react";
 
+// Hook to handle API calls
+
 const useAPICall = (props: IRequestProp) => {
-  const { pagination } = props;
+  const { url = "", pagination } = props;
 
   // States
   const [isLoading, setLoading] = useState(false);
@@ -18,7 +20,8 @@ const useAPICall = (props: IRequestProp) => {
 
     try {
       // Make the API call to authenticate
-      const response = await onCallAPI("", { pagination });
+      const response = await onCallAPI(url, pagination);
+      console.log({ response });
 
       // Check the response and set the authentication status
       if (response?.results?.length > 0) {
