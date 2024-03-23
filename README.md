@@ -36,6 +36,10 @@ In the project directory, you can run:
 - `npm run build`: Builds the app for production.
 - `npm start`: Starts the app in production mode.
 
+## Env
+
+Make sure to create a `.env` file using local_env (Always keep your secrets in your vault)
+
 ## Run
 
 To run the project, follow the given instructions:
