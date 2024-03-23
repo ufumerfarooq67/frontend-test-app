@@ -43,6 +43,7 @@ const debounce = <F extends (...args: any[]) => void>(
   };
 };
 
+// User List Main Component
 export default function UserList() {
   // States
   const [users, setUsers] = useState<IUserPayload[]>([]);
@@ -54,7 +55,7 @@ export default function UserList() {
   const [filter, setFilter] = useState(""); // Dropdown Filter (Gender)
   const [filteredUsers, setFilteredUsers] = useState<IUserPayload[]>([]); // Filtered Data
 
-  // Hooks
+  // Hooks (API Call)
   const { isLoading, error, data }: IFetchHookUserData = useAPICall({
     url: "",
     pagination,
@@ -65,7 +66,9 @@ export default function UserList() {
     const store = localStorage.getItem("filter");
     setFilter(store ?? "");
   };
+
   const onUserMapper = (items: IUserPayloadRaw[]) => {
+    //Function to map user data
     const mapped_data = onUsersMap(items);
     setUsers(mapped_data);
   };
@@ -75,6 +78,7 @@ export default function UserList() {
     localStorage.setItem("filter", value);
   };
 
+  // Search Input Handler with the help of debounce
   const onSearchInputChange = debounce((value) => {
     setSearchText(value);
 

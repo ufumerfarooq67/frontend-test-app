@@ -1,6 +1,7 @@
 import { IUserPayload, IUserPayloadRaw } from "../interfaces";
 import { toTitleCase } from "./string";
 
+// Mapper function to map api response to custom interface
 export function onUsersMap(items: IUserPayloadRaw[]): IUserPayload[] {
   console.log({ items });
 

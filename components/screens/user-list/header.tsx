@@ -10,6 +10,7 @@ interface IHeaderProps {
   onSearchInputChange(val: string): void;
 }
 
+// User List Header
 export default function HeaderList(props: IHeaderProps) {
   const { filter, search, onDropdownChange, onSearchInputChange } = props;
 
@@ -30,6 +31,7 @@ export default function HeaderList(props: IHeaderProps) {
         style={{ width: 250 }}
         size="large"
         placeholder="Search"
+        value={search}
         prefix={<FaSearch />}
         onChange={(e) => onSearchInputChange(e.target.value)}
       />

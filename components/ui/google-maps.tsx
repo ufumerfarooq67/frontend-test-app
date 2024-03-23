@@ -5,6 +5,7 @@ interface IGoogleMapsProps {
   coordinates: { lat: string; lng: string };
 }
 
+// Google Maps Component
 export default function GoogleMasps(props: IGoogleMapsProps) {
   const { coordinates } = props;
 

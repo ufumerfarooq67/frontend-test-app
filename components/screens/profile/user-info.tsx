@@ -8,6 +8,7 @@ interface IUserProfileProps {
   data: IUserPayload;
 }
 
+// User Info Component
 export default function UserInfo(props: IUserProfileProps) {
   const { data } = props;
 

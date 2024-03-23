@@ -1,3 +1,4 @@
+// Case changer
 export function toTitleCase(sentence: string): string {
   // Split the sentence into words
   const words = sentence.toLowerCase().split(" ");

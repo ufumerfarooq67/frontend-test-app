@@ -11,6 +11,7 @@ interface IUserProfileProps {
   data: IUserPayload;
 }
 
+// Profile Main Screen
 export default function ProfileScreen(props: IUserProfileProps) {
   const { data } = props;
 
